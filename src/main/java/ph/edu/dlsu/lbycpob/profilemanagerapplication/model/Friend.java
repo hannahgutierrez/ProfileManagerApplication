@@ -21,4 +21,13 @@ public class Friend {
     @Column(name = "friend_id", nullable = false, columnDefinition = "uuid")
     private UUID friendId;
 
+    public Friend() {
+    }
+
+    public Friend(UUID id, UUID profileId, UUID friendId) {
+        this.id = id;
+        this.profileId = profileId;
+        this.friendId = friendId;
+    }
+
 }
