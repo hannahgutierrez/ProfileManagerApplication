@@ -48,4 +48,8 @@ public class Profile {
         this.createdAt = createdAt;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
 }
