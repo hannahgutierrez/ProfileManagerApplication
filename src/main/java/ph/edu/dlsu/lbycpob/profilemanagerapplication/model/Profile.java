@@ -9,6 +9,7 @@ import org.hibernate.annotations.UuidGenerator;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 import java.util.UUID;
-
+@Entity
+@Table(name = "profiles")
 public class Profile {
 }
