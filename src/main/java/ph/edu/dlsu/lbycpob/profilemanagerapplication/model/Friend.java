@@ -42,4 +42,8 @@ public class Friend {
         return profileId;
     }
 
+    public void setProfileId(UUID profileId) {
+        this.profileId = profileId;
+    }
+
 }
