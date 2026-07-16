@@ -181,5 +181,9 @@ public class Profile {
             return new Profile(id, name, status, quote, picture, createdAt);
         }
 
+        public String getName() {
+            return name;
+        }
+
     }
 }
