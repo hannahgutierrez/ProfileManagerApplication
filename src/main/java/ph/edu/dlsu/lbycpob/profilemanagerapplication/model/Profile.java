@@ -157,5 +157,10 @@ public class Profile {
             return this;
         }
 
+        public Builder status(String status) {
+            this.status = status;
+            return this;
+        }
+
     }
 }
