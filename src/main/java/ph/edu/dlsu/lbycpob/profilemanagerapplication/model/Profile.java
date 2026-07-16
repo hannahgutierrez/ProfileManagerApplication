@@ -167,5 +167,10 @@ public class Profile {
             return this;
         }
 
+        public Builder picture(String picture) {
+            this.picture = picture;
+            return this;
+        }
+
     }
 }
