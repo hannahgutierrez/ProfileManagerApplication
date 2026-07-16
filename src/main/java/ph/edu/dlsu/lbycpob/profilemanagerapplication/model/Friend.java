@@ -92,4 +92,10 @@ public class Friend {
         private Builder() {
         }
 
+        public Builder id(UUID id) {
+            this.id = id;
+            return this;
+        }
+
+    }
 }
