@@ -50,4 +50,8 @@ public class Friend {
         return friendId;
     }
 
+    public void setFriendId(UUID friendId) {
+        this.friendId = friendId;
+    }
+
 }
