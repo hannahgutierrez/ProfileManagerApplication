@@ -12,4 +12,28 @@ import java.util.UUID;
 @Entity
 @Table(name = "profiles")
 public class Profile {
+    @Id
+    @UuidGenerator
+    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+    private UUID id;
+
+    @Column(nullable = false, unique = true)
+    private String name;
+
+    @Column(nullable = false)
+    private String status = "";
+
+    @Column(nullable = false)
+    private String quote = "";
+
+    @Column(nullable = false)
+    private String picture = "https://6fkrqtkwbcnqsois.public.blob.vercel-storage.com/avatars/default.webp";
+
+    // insertable = false, updatable = false: the DB's default now()
+    // populates this column; we never write to it from Java. It reads
+    // back correctly on any fresh SELECT (e.g. the redirect-after-POST
+    // that follows profile creation).
+    @Column(name = "created_at", insertable = false, updatable = false)
+    private OffsetDateTime createdAt;
+
 }
