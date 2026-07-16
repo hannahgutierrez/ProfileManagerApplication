@@ -30,4 +30,8 @@ public class Friend {
         this.friendId = friendId;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
 }
