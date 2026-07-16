@@ -84,4 +84,8 @@ public class Profile {
         return picture;
     }
 
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
 }
