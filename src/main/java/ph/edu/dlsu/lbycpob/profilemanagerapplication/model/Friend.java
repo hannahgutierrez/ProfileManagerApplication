@@ -63,4 +63,9 @@ public class Friend {
                 && Objects.equals(friendId, friend.friendId);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, profileId, friendId);
+    }
+
 }
