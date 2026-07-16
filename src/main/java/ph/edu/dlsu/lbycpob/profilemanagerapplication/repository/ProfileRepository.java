@@ -1,4 +1,12 @@
 package ph.edu.dlsu.lbycpob.profilemanagerapplication.repository;
 
-public interface ProfileRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import ph.edu.dlsu.lbycpob.profilemanagerapplication.model.Profile;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface ProfileRepository extends JpaRepository<Profile, UUID>
+{
 }
