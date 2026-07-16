@@ -152,5 +152,10 @@ public class Profile {
             return this;
         }
 
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
     }
 }
