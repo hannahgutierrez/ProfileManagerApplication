@@ -54,4 +54,13 @@ public class Friend {
         this.friendId = friendId;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Friend friend)) return false;
+        return Objects.equals(id, friend.id)
+                && Objects.equals(profileId, friend.profileId)
+                && Objects.equals(friendId, friend.friendId);
+    }
+
 }
