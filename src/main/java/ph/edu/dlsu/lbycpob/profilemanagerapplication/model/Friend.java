@@ -102,5 +102,10 @@ public class Friend {
             return this;
         }
 
+        public Builder friendId(UUID friendId) {
+            this.friendId = friendId;
+            return this;
+        }
+
     }
 }
