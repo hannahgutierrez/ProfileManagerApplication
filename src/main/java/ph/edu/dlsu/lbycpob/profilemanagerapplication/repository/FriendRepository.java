@@ -8,4 +8,10 @@ import java.util.List;
 import java.util.UUID;
 
 public interface FriendRepository extends JpaRepository<Friend, UUID> {
+    List<Friend> findByProfileId(UUID profileId);
+
+    boolean existsByProfileIdAndFriendId(UUID profileId, UUID friendId);
+
+    @Transactional
+    void deleteByProfileIdAndFriendId(UUID profileId, UUID friendId);
 }
