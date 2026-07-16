@@ -144,4 +144,8 @@ public class Profile {
         private String picture = "https://6fkrqtkwbcnqsois.public.blob.vercel-storage.com/avatars/default.webp";
         private OffsetDateTime createdAt;
 
+        private Builder() {
+        }
+
     }
+}
