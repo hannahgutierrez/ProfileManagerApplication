@@ -38,4 +38,8 @@ public class Friend {
         this.id = id;
     }
 
+    public UUID getProfileId() {
+        return profileId;
+    }
+
 }
