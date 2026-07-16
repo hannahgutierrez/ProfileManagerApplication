@@ -172,5 +172,10 @@ public class Profile {
             return this;
         }
 
+        public Builder createdAt(OffsetDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
     }
 }
