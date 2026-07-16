@@ -68,4 +68,13 @@ public class Friend {
         return Objects.hash(id, profileId, friendId);
     }
 
+    @Override
+    public String toString() {
+        return "Friend{" +
+                "id=" + id +
+                ", profileId=" + profileId +
+                ", friendId=" + friendId +
+                '}';
+    }
+
 }
