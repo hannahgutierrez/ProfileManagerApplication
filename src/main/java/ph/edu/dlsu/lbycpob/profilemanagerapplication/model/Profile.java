@@ -185,5 +185,8 @@ public class Profile {
             return name;
         }
 
+        public UUID getId() {
+            return id;
+        }
     }
 }
