@@ -10,4 +10,15 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Friend {
+    @Id
+    @UuidGenerator
+    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+    private UUID id;
+
+    @Column(name = "profile_id", nullable = false, columnDefinition = "uuid")
+    private UUID profileId;
+
+    @Column(name = "friend_id", nullable = false, columnDefinition = "uuid")
+    private UUID friendId;
+
 }
