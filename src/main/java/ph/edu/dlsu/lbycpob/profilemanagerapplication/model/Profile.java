@@ -76,4 +76,8 @@ public class Profile {
         return quote;
     }
 
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
 }
