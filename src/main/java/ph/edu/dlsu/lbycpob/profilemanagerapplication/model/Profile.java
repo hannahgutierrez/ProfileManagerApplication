@@ -113,4 +113,16 @@ public class Profile {
         return Objects.hash(id, name, status, quote, picture, createdAt);
     }
 
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                ", quote='" + quote + '\'' +
+                ", picture='" + picture + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
+    }
+
 }
