@@ -72,5 +72,8 @@ public class Profile {
         this.status = status;
     }
 
+    public String getQuote() {
+        return quote;
+    }
 
 }
