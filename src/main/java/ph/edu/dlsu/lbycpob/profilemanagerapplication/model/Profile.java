@@ -64,4 +64,8 @@ public class Profile {
         this.name = name;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
 }
