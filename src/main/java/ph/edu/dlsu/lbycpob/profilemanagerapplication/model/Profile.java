@@ -88,4 +88,8 @@ public class Profile {
         this.picture = picture;
     }
 
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
 }
