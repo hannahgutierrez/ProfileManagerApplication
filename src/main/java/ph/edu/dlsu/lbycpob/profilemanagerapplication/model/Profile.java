@@ -162,5 +162,10 @@ public class Profile {
             return this;
         }
 
+        public Builder quote(String quote) {
+            this.quote = quote;
+            return this;
+        }
+
     }
 }
