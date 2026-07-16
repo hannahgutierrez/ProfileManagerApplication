@@ -80,4 +80,8 @@ public class Profile {
         this.quote = quote;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
 }
