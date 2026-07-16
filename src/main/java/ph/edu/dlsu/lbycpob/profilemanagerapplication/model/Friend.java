@@ -97,5 +97,10 @@ public class Friend {
             return this;
         }
 
+        public Builder profileId(UUID profileId) {
+            this.profileId = profileId;
+            return this;
+        }
+
     }
 }
