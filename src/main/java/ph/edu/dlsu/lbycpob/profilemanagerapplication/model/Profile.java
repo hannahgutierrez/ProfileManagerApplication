@@ -177,5 +177,9 @@ public class Profile {
             return this;
         }
 
+        public Profile build() {
+            return new Profile(id, name, status, quote, picture, createdAt);
+        }
+
     }
 }
