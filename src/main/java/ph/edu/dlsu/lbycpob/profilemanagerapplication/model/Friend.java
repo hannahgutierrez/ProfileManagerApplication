@@ -81,5 +81,15 @@ public class Friend {
         return new Builder();
     }
 
+    /**
+     * Manual replacement for Lombok's @Builder.
+     */
+    public static final class Builder {
+        private UUID id;
+        private UUID profileId;
+        private UUID friendId;
+
+        private Builder() {
+        }
 
 }
