@@ -25,3 +25,14 @@ public class ProfileController {
     public List<Dtos.ProfileListItem> listProfiles() {
         return profileService.listProfiles().stream().map(ProfileListItem::of).toList();
     }
+    @GetMapping("/{id}")
+    public ProfileDetail getProfile(@PathVariable UUID id) {
+        Profile profile = profileService.getProfile(id);
+        return ProfileDetail.of(profile, profileService.getFriendsOf(id));
+    }
+
+    @GetMapping("/lookup")
+    public ProfileDetail lookupProfile(@RequestParam String query) {
+        Profile profile = profileService.lookupFirstMatch(query);
+        return ProfileDetail.of(profile, profileService.getFriendsOf(profile.getId()));
+    }
