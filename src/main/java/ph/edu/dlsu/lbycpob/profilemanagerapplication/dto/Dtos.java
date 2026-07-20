@@ -16,3 +16,19 @@ public class Dtos {
             return new ProfileListItem(p.getId(), p.getName(), p.getPicture());
         }
     }
+
+    /** Friend list row. */
+    public record NameRef(UUID id, String name) {
+        public static NameRef of(Profile p) {
+            return new NameRef(p.getId(), p.getName());
+        }
+    }
+
+    /** Full detail shown in the centre panel, including resolved friends. */
+    public record ProfileDetail(UUID id, String name, String status, String quote, String picture, List<NameRef> friends) {
+        public static ProfileDetail of(Profile p, List<Profile> friends) {
+            return new ProfileDetail(
+                    p.getId(), p.getName(), p.getStatus(), p.getQuote(), p.getPicture(),
+                    friends.stream().map(NameRef::of).toList());
+        }
+    }
