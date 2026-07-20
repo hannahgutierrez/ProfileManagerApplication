@@ -80,3 +80,17 @@ public class ProfileController {
         String url = profileService.updatePictureFromUpload(id, file);
         return new PictureResult(url);
     }
+
+    @PostMapping("/{id}/friends")
+    public Map<String, String> addFriend(@PathVariable UUID id, @RequestBody FriendActionRequest request) {
+        String friendName = profileService.addFriend(id, request.friendName());
+        return Map.of("friendName", friendName);
+    }
+
+    @DeleteMapping("/{id}/friends")
+    public Map<String, String> removeFriend(@PathVariable UUID id, @RequestBody FriendActionRequest request) {
+        String friendName = profileService.removeFriend(id, request.friendName());
+        return Map.of("friendName", friendName);
+    }
+}
+
