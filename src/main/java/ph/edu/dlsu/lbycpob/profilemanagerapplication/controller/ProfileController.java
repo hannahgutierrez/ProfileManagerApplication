@@ -49,3 +49,15 @@ public class ProfileController {
         profileService.deleteProfile(id);
         return Map.of("deletedName", profile.getName());
     }
+
+    @PatchMapping("/{id}/status")
+    public Map<String, String> updateStatus(@PathVariable UUID id, @RequestBody UpdateStatusRequest request) {
+        profileService.updateStatus(id, request.status());
+        return Map.of("status", request.status().trim());
+    }
+
+    @PatchMapping("/{id}/quote")
+    public Map<String, String> updateQuote(@PathVariable UUID id, @RequestBody UpdateQuoteRequest request) {
+        profileService.updateQuote(id, request.quote());
+        return Map.of("quote", request.quote().trim());
+    }
