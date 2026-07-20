@@ -42,3 +42,28 @@ public class ProfileService {
                 .toList();
         return friendIds.isEmpty() ? List.of() : profileRepository.findAllById(friendIds);
     }
+
+
+    public Profile lookupFirstMatch(String query) {
+        String trimmed = query == null ? "" : query.trim();
+        if (trimmed.isEmpty()) {
+            throw new IllegalArgumentException("Name field is empty. Please enter a name to search.");
+        }
+        List<Profile> matches = profileRepository.findByNameContainingIgnoreCaseOrderByNameAsc(trimmed);
+        if (matches.isEmpty()) {
+            throw new NoSuchElementException("No profile found matching \"" + trimmed + "\".");
+        }
+        return matches.getFirst();
+    }
+
+    @Transactional
+    public Profile createProfile(String name) {
+        String trimmed = name == null ? "" : name.trim();
+        if (trimmed.isEmpty()) {
+            throw new IllegalArgumentException("Name field is empty. Please enter a name.");
+        }
+        if (profileRepository.findByNameIgnoreCase(trimmed).isPresent()) {
+            throw new IllegalStateException("A profile named \"" + trimmed + "\" already exists.");
+        }
+        return profileRepository.save(Profile.builder().name(trimmed).build());
+    }
