@@ -35,3 +35,10 @@ public class ProfileService {
         return profileRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Profile not found."));
     }
+
+    public List<Profile> getFriendsOf(UUID profileId) {
+        List<UUID> friendIds = friendRepository.findByProfileId(profileId).stream()
+                .map(Friend::getFriendId)
+                .toList();
+        return friendIds.isEmpty() ? List.of() : profileRepository.findAllById(friendIds);
+    }
