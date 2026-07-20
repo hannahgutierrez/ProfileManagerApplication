@@ -1,5 +1,6 @@
 package ph.edu.dlsu.lbycpob.profilemanagerapplication.service;
 
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -42,7 +43,6 @@ public class ProfileService {
                 .toList();
         return friendIds.isEmpty() ? List.of() : profileRepository.findAllById(friendIds);
     }
-
 
     public Profile lookupFirstMatch(String query) {
         String trimmed = query == null ? "" : query.trim();
