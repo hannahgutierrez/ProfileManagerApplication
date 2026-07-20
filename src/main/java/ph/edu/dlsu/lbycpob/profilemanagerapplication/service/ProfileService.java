@@ -19,3 +19,19 @@ public class ProfileService {
     private final FriendRepository friendRepository;
     private final ImageCompressionService imageCompressionService;
     private final SupabaseStorageService supabaseStorageService;
+
+    public ProfileService(ProfileRepository profileRepository, FriendRepository friendRepository, ImageCompressionService imageCompressionService, SupabaseStorageService supabaseStorageService) {
+        this.profileRepository = profileRepository;
+        this.friendRepository = friendRepository;
+        this.imageCompressionService = imageCompressionService;
+        this.supabaseStorageService = supabaseStorageService;
+    }
+
+    public List<Profile> listProfiles() {
+        return profileRepository.findAllByOrderByNameAsc();
+    }
+
+    public Profile getProfile(UUID id) {
+        return profileRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Profile not found."));
+    }
