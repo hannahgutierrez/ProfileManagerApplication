@@ -36,3 +36,16 @@ public class ProfileController {
         Profile profile = profileService.lookupFirstMatch(query);
         return ProfileDetail.of(profile, profileService.getFriendsOf(profile.getId()));
     }
+
+    @PostMapping
+    public ProfileDetail createProfile(@RequestBody NewProfileRequest request) {
+        Profile created = profileService.createProfile(request.name());
+        return ProfileDetail.of(created, List.of());
+    }
+
+    @DeleteMapping("/{id}")
+    public Map<String, String> deleteProfile(@PathVariable UUID id) {
+        Profile profile = profileService.getProfile(id);
+        profileService.deleteProfile(id);
+        return Map.of("deletedName", profile.getName());
+    }
