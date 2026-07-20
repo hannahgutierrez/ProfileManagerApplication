@@ -12,5 +12,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
+@Service
 public class ProfileService {
-}
+
+    private final ProfileRepository profileRepository;
+    private final FriendRepository friendRepository;
+    private final ImageCompressionService imageCompressionService;
+    private final SupabaseStorageService supabaseStorageService;
