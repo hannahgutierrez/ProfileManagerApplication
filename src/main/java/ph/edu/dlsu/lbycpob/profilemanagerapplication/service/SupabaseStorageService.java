@@ -1,4 +1,4 @@
-package ph.edu.dlsu.lbycpob.profilemanager.service;
+package ph.edu.dlsu.lbycpob.profilemanagerapplication.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
