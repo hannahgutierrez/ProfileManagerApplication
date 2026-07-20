@@ -93,3 +93,13 @@ public class ProfileService {
         }
         getProfile(id).setQuote(trimmed);
     }
+
+    /** Mode B: paste a URL directly, same as the original saveUrlDirectly(). */
+    @Transactional
+    public void updatePictureUrl(UUID id, String pictureUrl) {
+        String trimmed = pictureUrl == null ? "" : pictureUrl.trim();
+        if (!trimmed.startsWith("https://")) {
+            throw new IllegalArgumentException("URL must start with https://");
+        }
+        getProfile(id).setPicture(trimmed);
+    }
