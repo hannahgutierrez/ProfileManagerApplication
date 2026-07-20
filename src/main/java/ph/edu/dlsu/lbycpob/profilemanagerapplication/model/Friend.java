@@ -9,6 +9,8 @@ import org.hibernate.annotations.UuidGenerator;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "friends")
 public class Friend {
     @Id
     @UuidGenerator
